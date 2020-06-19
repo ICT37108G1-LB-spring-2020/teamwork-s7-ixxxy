@@ -1,0 +1,38 @@
+
+<div class="alert alert-success ">
+  <a href="/books">books</a><br><a href="/">home</a>
+  <h5 class="alert alert-danger">წიგნები:</h5>
+  <div class="flex">
+<li *ngFor="let book of books">
+
+  <h4>
+    {{book.name}}
+       <button class="btn btn-danger btn-sm"  (click)="deleteOpt(book)">x</button>
+
+  </h4>
+   <a href="javascript: void(0)" (click)="chooseOpt(book)">
+   <img src="{{book.img}}" alt="" style="width:150px; height:200px;">
+   </a>
+ </li>
+
+  <div style="margin-left:150px; ">
+     <h3>{{wigni.name}}</h3>
+      <a href="javascript: void(0)">
+      <img src="{{wigni.img}}" alt="" style="width:150px; height:200px;">
+      </a>
+
+  </div>
+<p style="margin:50px 10px; color: black; width:100px; font-size:12px;">{{wigni.info}}</p>
+</div>
+
+<form  id="testForm" (submit)="addname(name.value, img.value)">
+  <div class="form-group alert alert-danger" style="margin-top: 50px;">
+    <label for="option"><h5>ახალი წიგნის დამატება:</h5></label>
+    <input type="text" placeholder="წიგნის სახელწოდება" class="form-control" #name>
+    <input type="url"  placeholder="წიგნის ფოტოსურათის URL მისამართი" class="form-control" #img>
+    <br>
+    <button type="submit" class="btn btn-outline-success">დამატება</button>
+
+  </div>
+</form>
+</div>
